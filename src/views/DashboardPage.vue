@@ -285,4 +285,22 @@ export default {
   margin-top: 15px;
   gap: 15px;
 }
+
+@media (max-width: 1700px) {
+  .kpi-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
