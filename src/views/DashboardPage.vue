@@ -18,6 +18,7 @@
         title="Portfolio - $24,540"
         :series="portfolioSeries"
         :categories="portfolioCategories"
+        @update-chart="updateChartData"
       />
     </div>
   </div>
@@ -74,58 +75,115 @@ export default {
         },
       ],
       portfolioSeries: [
-        { name: "Portfolio Value", data: [0, 0, 0, 0, 0, 0, 0] },
-      ],
-      portfolioCategories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    };
-  },
-  mounted() {
-    setTimeout(() => {
-      this.statCards = [
         {
-          label: "Portfolio Value",
-          value: "$24,540",
-          change: "+2.6%",
-          icon: "fas fa-wallet",
-        },
-        {
-          label: "24h Change",
-          value: "+$620",
-          change: "+2.6%",
-          icon: "fas fa-arrow-trend-up",
-        },
-        {
-          label: "BTC Price",
-          value: "$64,200",
-          change: "-0.8%",
-          icon: "fab fa-bitcoin",
-        },
-        {
-          label: "ETH Price",
-          value: "$3,120",
-          change: "+1.3%",
-          icon: "fab fa-ethereum",
-        },
-        {
-          label: "Top Gainer",
-          value: "SOL +8.2%",
-          change: "+8.2%",
-          icon: "fas fa-fire",
-        },
-        {
-          label: "Top Loser",
-          value: "DOGE -3.7%",
-          change: "-3.7%",
-          icon: "fas fa-sad-tear",
-        },
-      ];
-      this.portfolioSeries = [
-        {
-          name: "Portfolio",
+          name: "Portfolio Value",
           data: [23000, 23500, 22800, 24200, 24540, 24300, 24540],
         },
-      ];
-    }, 100);
+      ],
+      portfolioCategories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      portfolioData: {
+        daily: {
+          series: [
+            {
+              name: "Portfolio Value",
+              data: [23000, 23500, 22800, 24200, 24540, 24300, 24540],
+            },
+          ],
+          categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        },
+        weekly: {
+          series: [
+            {
+              name: "Portfolio Value",
+              data: [23000, 24000, 25000, 24500, 25500, 26000, 26500],
+            },
+          ],
+          categories: [
+            "Week 1",
+            "Week 2",
+            "Week 3",
+            "Week 4",
+            "Week 5",
+            "Week 6",
+            "Week 7",
+          ],
+        },
+        monthly: {
+          series: [
+            {
+              name: "Portfolio Value",
+              data: [
+                23000, 24500, 27000, 28000, 30000, 32000, 35000, 36000, 37000,
+                38000, 39000, 40000,
+              ],
+            },
+          ],
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+        },
+      },
+      selectedTimeframe: "daily",
+    };
+  },
+  methods: {
+    updateChartData(newTimeframe) {
+      this.selectedTimeframe = newTimeframe;
+      const { series, categories } = this.portfolioData[this.selectedTimeframe];
+      this.portfolioSeries = series;
+      this.portfolioCategories = categories;
+    },
+  },
+  mounted() {
+    this.statCards = [
+      {
+        label: "Portfolio Value",
+        value: "$24,540",
+        change: "+2.6%",
+        icon: "fas fa-wallet",
+      },
+      {
+        label: "24h Change",
+        value: "+$620",
+        change: "+2.6%",
+        icon: "fas fa-arrow-trend-up",
+      },
+      {
+        label: "BTC Price",
+        value: "$64,200",
+        change: "-0.8%",
+        icon: "fab fa-bitcoin",
+      },
+      {
+        label: "ETH Price",
+        value: "$3,120",
+        change: "+1.3%",
+        icon: "fab fa-ethereum",
+      },
+      {
+        label: "Top Gainer",
+        value: "SOL +8.2%",
+        change: "+8.2%",
+        icon: "fas fa-fire",
+      },
+      {
+        label: "Top Loser",
+        value: "DOGE -3.7%",
+        change: "-3.7%",
+        icon: "fas fa-sad-tear",
+      },
+    ];
   },
 };
 </script>

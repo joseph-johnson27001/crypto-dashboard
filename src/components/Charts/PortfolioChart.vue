@@ -5,7 +5,7 @@
         <i class="header-icon fas fa-dollar-sign"></i> {{ title }}
       </h3>
 
-      <select v-model="selectedTimeframe" @change="updateChartData">
+      <select v-model="selectedTimeframe" @change="handleTimeframeChange">
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
         <option value="monthly">Monthly</option>
@@ -50,7 +50,7 @@ export default {
         dataLabels: { enabled: false },
         stroke: {
           curve: "straight",
-          width: 2,
+          width: 3,
         },
         fill: {
           type: "gradient",
@@ -58,7 +58,7 @@ export default {
             shadeIntensity: 1,
             opacityFrom: 0.3,
             opacityTo: 0,
-            stops: [0, 95, 100],
+            stops: [0, 90, 100],
           },
         },
         xaxis: {
@@ -79,6 +79,11 @@ export default {
           borderColor: "rgba(193, 191, 214, 0.2)",
         },
       };
+    },
+  },
+  methods: {
+    handleTimeframeChange() {
+      this.$emit("update-chart", this.selectedTimeframe); // Emit the selected timeframe to parent
     },
   },
 };
