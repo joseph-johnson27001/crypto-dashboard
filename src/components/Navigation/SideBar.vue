@@ -14,7 +14,9 @@
         }"
         @click="setActiveItem(item.name)"
       >
-        <i :class="item.icon"></i>
+        <div class="icon-container">
+          <i :class="item.icon"></i>
+        </div>
         <span v-if="!collapsed">{{ item.label }}</span>
       </li>
     </ul>
@@ -149,6 +151,14 @@ export default {
   align-items: center;
   white-space: nowrap;
   font-size: 1.1rem;
+}
+
+.sidebar.collapsed .icon-container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar ul li.logout-item {
