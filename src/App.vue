@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SideBar />
+    <SideBar v-model:collapsed="isSidebarCollapsed" />
     <div class="content">
       <DashboardPage />
     </div>
@@ -16,6 +16,23 @@ export default {
   components: {
     SideBar,
     DashboardPage,
+  },
+  data() {
+    return {
+      isSidebarCollapsed: true,
+    };
+  },
+  watch: {
+    isSidebarCollapsed() {
+      setTimeout(() => {
+        this.triggerResize();
+      }, 100);
+    },
+  },
+  methods: {
+    triggerResize() {
+      window.dispatchEvent(new Event("resize"));
+    },
   },
 };
 </script>

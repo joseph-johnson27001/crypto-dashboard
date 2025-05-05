@@ -292,7 +292,7 @@ export default {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .chart-row {
     grid-template-columns: 1fr;
   }

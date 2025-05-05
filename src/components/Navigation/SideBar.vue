@@ -26,10 +26,13 @@
 <script>
 export default {
   name: "SideBar",
+  props: {
+    collapsed: Boolean,
+  },
+  emits: ["update:collapsed"],
   data() {
     return {
       activeItem: "dashboard",
-      collapsed: true,
       menuItems: [
         {
           name: "dashboard",
@@ -78,7 +81,7 @@ export default {
   },
   methods: {
     toggleCollapse() {
-      this.collapsed = !this.collapsed;
+      this.$emit("update:collapsed", !this.collapsed); // ✅ emit instead of mutate
     },
     setActiveItem(name) {
       this.activeItem = name;
