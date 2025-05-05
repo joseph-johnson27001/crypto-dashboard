@@ -20,7 +20,13 @@
         :categories="portfolioCategories"
         @update-chart="updateChartData"
       />
-      <div>PLACEHOLDER</div>
+
+      <!-- Recent Activity -->
+      <div class="recent-activity-row">
+        <RecentActivity :activities="recentActivities" />
+      </div>
+
+      <!-- Coin Table -->
       <CoinTable :coins="coinTableData" />
     </div>
   </div>
@@ -30,6 +36,7 @@
 import StatCard from "@/components/UI/StatCard.vue";
 import PortfolioChart from "@/components/Charts/PortfolioChart.vue";
 import CoinTable from "@/components/Tables/CoinTable.vue";
+import RecentActivity from "@/components/Activity/RecentActivity.vue";
 
 export default {
   name: "DashboardPage",
@@ -37,6 +44,7 @@ export default {
     StatCard,
     PortfolioChart,
     CoinTable,
+    RecentActivity,
   },
   data() {
     return {
@@ -76,6 +84,43 @@ export default {
           value: "DOGE -3.7%",
           change: "-3.7%",
           icon: "fas fa-sad-tear",
+        },
+      ],
+      recentActivities: [
+        {
+          type: "purchase",
+          text: "Purchased 1.5 BTC",
+          time: "2 hours ago",
+        },
+        {
+          type: "sell",
+          text: "Sold 10 ETH",
+          time: "1 day ago",
+        },
+        {
+          type: "alert",
+          text: "Price drop alert for Solana",
+          time: "3 hours ago",
+        },
+        {
+          type: "rebalance",
+          text: "Rebalanced portfolio",
+          time: "Yesterday",
+        },
+        {
+          type: "deposit",
+          text: "Deposited $5000",
+          time: "1 week ago",
+        },
+        {
+          type: "purchase",
+          text: "Purchased 500 ADA",
+          time: "1 hour ago",
+        },
+        {
+          type: "sell",
+          text: "Sold 20 SOL",
+          time: "2 days ago",
         },
       ],
       portfolioSeries: [
