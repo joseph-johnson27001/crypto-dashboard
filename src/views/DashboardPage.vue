@@ -15,7 +15,7 @@
     <!-- Portfolio Chart -->
     <div class="chart-row">
       <PortfolioChart
-        title="Portfolio Value"
+        title="Portfolio Value ($24,540)"
         :series="portfolioSeries"
         :categories="portfolioCategories"
       />
@@ -35,7 +35,6 @@ export default {
   },
   data() {
     return {
-      // Initially empty data to simulate loading
       statCards: [
         {
           label: "Portfolio Value",
@@ -81,7 +80,6 @@ export default {
     };
   },
   mounted() {
-    // Simulate data loading after the component is mounted
     setTimeout(() => {
       this.statCards = [
         {
@@ -123,8 +121,8 @@ export default {
       ];
       this.portfolioSeries = [
         {
-          name: "Portfolio Value",
-          data: [23000, 23500, 22800, 24200, 24540, 24300, 24800],
+          name: "Portfolio",
+          data: [23000, 23500, 22800, 24200, 24540, 24300, 24540],
         },
       ];
     }, 100);

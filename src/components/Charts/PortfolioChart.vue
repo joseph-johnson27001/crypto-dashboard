@@ -1,6 +1,13 @@
 <template>
   <div class="chart-card">
-    <h3 class="chart-title">{{ title }}</h3>
+    <div class="header-area">
+      <h3 class="chart-title">{{ title }}</h3>
+      <select v-model="selectedTimeframe" @change="updateChartData">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+    </div>
     <apexchart
       type="area"
       height="300"
@@ -23,6 +30,11 @@ export default {
     series: Array,
     categories: Array,
   },
+  data() {
+    return {
+      selectedTimeframe: "daily",
+    };
+  },
   computed: {
     chartOptions() {
       return {
@@ -34,7 +46,7 @@ export default {
         colors: ["#FFA500"],
         dataLabels: { enabled: false },
         stroke: {
-          curve: "smooth",
+          curve: "straight",
           width: 2,
         },
         fill: {
@@ -43,7 +55,7 @@ export default {
             shadeIntensity: 1,
             opacityFrom: 0.3,
             opacityTo: 0,
-            stops: [0, 90, 100],
+            stops: [0, 95, 100],
           },
         },
         xaxis: {
@@ -79,13 +91,30 @@ export default {
   font-family: "Rajdhani", sans-serif;
 }
 
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .chart-title {
   font-size: 1rem;
   font-weight: 400;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   color: #c1bfd6;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+select {
+  padding: 10px;
+  background-color: #2e3348;
+  color: #c1bfd6;
+  border: 1px solid #3a4254;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Rajdhani", sans-serif;
+  outline: none;
 }
 </style>
