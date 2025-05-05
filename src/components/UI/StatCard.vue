@@ -1,8 +1,7 @@
-<!-- components/UI/StatCard.vue -->
 <template>
   <div class="stat-card">
     <div class="stat-header">
-      <slot name="icon"></slot>
+      <i :class="['stat-icon', icon]"></i>
       <span class="label">{{ label }}</span>
     </div>
     <div class="stat-value">{{ value }}</div>
@@ -24,6 +23,7 @@ export default {
     label: String,
     value: String,
     change: String,
+    icon: String,
   },
   computed: {
     isPositive() {
@@ -36,20 +36,17 @@ export default {
 <style scoped>
 .stat-card {
   background: #2e3348;
-  border: 1px solid rgba(193, 191, 214, 0.2);
-  border-radius: 12px;
+  border: 2px solid rgba(193, 191, 214, 0.2);
+  border-radius: 8px;
   padding: 1.2rem;
   min-width: 180px;
   color: #c1bfd6;
   font-family: "Rajdhani", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
   transition: border 0.1s linear;
   cursor: pointer;
-}
-.stat-card:hover {
-  border: 1px solid whitesmoke;
 }
 
 .stat-header {
@@ -59,6 +56,11 @@ export default {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.stat-icon {
+  color: orange;
+  font-size: 1rem;
 }
 
 .stat-value {

@@ -34,10 +34,11 @@ body {
   display: flex;
   min-height: 100dvh;
   height: 100dvh;
+  width: 100%;
 }
 
 .content {
-  flex-grow: 1;
-  overflow-y: auto;
+  padding: 2rem;
+  width: 100%;
 }
 </style>

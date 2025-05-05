@@ -7,11 +7,8 @@
         :label="card.label"
         :value="card.value"
         :change="card.change"
-      >
-        <template #icon>
-          <i :class="card.icon"></i>
-        </template>
-      </StatCard>
+        :icon="card.icon"
+      />
     </div>
   </div>
 </template>
@@ -40,6 +37,18 @@ export default {
           icon: "fas fa-arrow-trend-up",
         },
         {
+          label: "Total Assets",
+          value: "$48,900",
+          change: "+1.9%",
+          icon: "fas fa-coins",
+        },
+        {
+          label: "Top Gainer",
+          value: "SOL +8.4%",
+          change: "+8.4%",
+          icon: "fas fa-arrow-up",
+        },
+        {
           label: "BTC Price",
           value: "$64,200",
           change: "-0.8%",
@@ -58,14 +67,9 @@ export default {
 </script>
 
 <style scoped>
-.dashboard {
-  padding: 2rem;
-  color: white;
-}
-
 .kpi-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 15px;
 }
 </style>
