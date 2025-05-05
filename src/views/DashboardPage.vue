@@ -15,7 +15,7 @@
     <!-- Portfolio Chart -->
     <div class="chart-row">
       <PortfolioChart
-        title="Portfolio Value ($24,540)"
+        title="Portfolio ($24,540)"
         :series="portfolioSeries"
         :categories="portfolioCategories"
       />

@@ -1,7 +1,10 @@
 <template>
   <div class="chart-card">
     <div class="header-area">
-      <h3 class="chart-title">{{ title }}</h3>
+      <h3 class="chart-title">
+        <i class="header-icon fas fa-dollar-sign"></i> {{ title }}
+      </h3>
+
       <select v-model="selectedTimeframe" @change="updateChartData">
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
@@ -98,13 +101,18 @@ export default {
 }
 
 .chart-title {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   margin-top: 5px;
   margin-bottom: 0px;
   color: #c1bfd6;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.header-icon {
+  color: orange;
+  font-size: 1.2rem;
 }
 
 select {
