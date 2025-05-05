@@ -145,12 +145,12 @@ export default {
 }
 
 .sidebar ul li {
-  padding: 20px 20px;
+  padding: 20px 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .sidebar.collapsed .icon-container {
