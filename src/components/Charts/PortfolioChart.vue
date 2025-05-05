@@ -2,7 +2,7 @@
   <div class="chart-card">
     <div class="header-area">
       <h3 class="chart-title">
-        <i class="header-icon fas fa-dollar-sign"></i> {{ title }}
+        <i class="header-icon fas fa-dollar-sign"></i>{{ title }}
       </h3>
 
       <select v-model="selectedTimeframe" @change="handleTimeframeChange">
@@ -117,6 +117,7 @@ export default {
 .header-icon {
   color: orange;
   font-size: 1.2rem;
+  margin-right: 5px;
 }
 
 select {

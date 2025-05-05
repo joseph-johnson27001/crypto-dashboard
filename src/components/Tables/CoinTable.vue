@@ -1,6 +1,9 @@
 <template>
   <div class="coin-table">
-    <h3 class="table-title">Your Portfolio Coins</h3>
+    <h3 class="table-title">
+      <i class="header-icon fas fa-circle-dollar-to-slot"></i> Portfolio
+      Breakdown
+    </h3>
     <table>
       <thead>
         <tr>
@@ -74,6 +77,14 @@ export default {
   font-size: 1.1rem;
   text-transform: uppercase;
   color: white;
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  color: orange;
+  font-size: 1.2rem;
+  margin-right: 5px;
 }
 
 table {
