@@ -115,12 +115,12 @@ export default {
         {
           type: "purchase",
           text: "Purchased 500 ADA",
-          time: "1 hour ago",
+          time: "1 week ago",
         },
         {
           type: "sell",
           text: "Sold 20 SOL",
-          time: "2 days ago",
+          time: "2 weeks ago",
         },
       ],
       portfolioSeries: [
