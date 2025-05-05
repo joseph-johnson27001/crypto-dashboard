@@ -39,7 +39,6 @@ export default {
   border: 1px solid rgba(193, 191, 214, 0.2);
   border-radius: 8px;
   padding: 0.8rem 1rem;
-  min-width: 180px;
   color: #c1bfd6;
   font-family: "Rajdhani", sans-serif;
   display: flex;

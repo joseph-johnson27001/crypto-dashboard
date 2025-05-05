@@ -306,13 +306,13 @@ export default {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .kpi-row {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .kpi-row {
     grid-template-columns: 1fr;
   }

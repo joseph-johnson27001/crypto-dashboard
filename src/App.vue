@@ -2,6 +2,7 @@
   <div id="app">
     <SideBar v-model:collapsed="isSidebarCollapsed" />
     <div class="content">
+      <TopNavigation />
       <DashboardPage />
     </div>
   </div>
@@ -10,12 +11,14 @@
 <script>
 import SideBar from "./components/Navigation/SideBar.vue";
 import DashboardPage from "./views/DashboardPage.vue";
+import TopNavigation from "./components/Navigation/TopNavigation.vue";
 
 export default {
   name: "App",
   components: {
     SideBar,
     DashboardPage,
+    TopNavigation,
   },
   data() {
     return {
@@ -55,7 +58,7 @@ body {
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 20px;
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: none;
