@@ -271,7 +271,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .kpi-row {
   display: grid;
@@ -281,9 +280,17 @@ export default {
 
 .chart-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-top: 15px;
   gap: 15px;
+}
+
+.chart-row > :first-child {
+  grid-column: span 2;
+}
+
+.chart-row > :nth-child(3) {
+  grid-column: span 2;
 }
 
 @media (max-width: 1700px) {
@@ -294,18 +301,14 @@ export default {
 
 @media (max-width: 1200px) {
   .chart-row {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 800px) {
   .kpi-row {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .chart-row {
-    display: flex; /* Switch to flexbox */
-    flex-direction: column; /* Stack items vertically */
   }
 }
 
@@ -315,8 +318,8 @@ export default {
   }
 
   .chart-row {
-    display: flex; /* Switch to flexbox */
-    flex-direction: column; /* Stack items vertically */
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
