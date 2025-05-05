@@ -14,7 +14,11 @@
 
     <!-- Portfolio Chart -->
     <div class="chart-row">
-      <PortfolioChart />
+      <PortfolioChart
+        title="Portfolio Value"
+        :series="portfolioSeries"
+        :categories="portfolioCategories"
+      />
     </div>
   </div>
 </template>
@@ -31,7 +35,55 @@ export default {
   },
   data() {
     return {
+      // Initially empty data to simulate loading
       statCards: [
+        {
+          label: "Portfolio Value",
+          value: "...",
+          change: "...",
+          icon: "fas fa-wallet",
+        },
+        {
+          label: "24h Change",
+          value: "...",
+          change: "...",
+          icon: "fas fa-arrow-trend-up",
+        },
+        {
+          label: "BTC Price",
+          value: "...",
+          change: "...",
+          icon: "fab fa-bitcoin",
+        },
+        {
+          label: "ETH Price",
+          value: "...",
+          change: "...",
+          icon: "fab fa-ethereum",
+        },
+        {
+          label: "Top Gainer",
+          value: "...",
+          change: "...",
+          icon: "fas fa-fire",
+        },
+        {
+          label: "Top Loser",
+          value: "...",
+          change: "...",
+          icon: "fas fa-sad-tear",
+        },
+      ],
+      portfolioSeries: [
+        { name: "Portfolio Value", data: [0, 0, 0, 0, 0, 0, 0] },
+      ],
+      portfolioCategories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    };
+  },
+  mounted() {
+    // Simulate data loading after the component is mounted
+    setTimeout(() => {
+      this.statCards = [
         {
           label: "Portfolio Value",
           value: "$24,540",
@@ -68,8 +120,14 @@ export default {
           change: "-3.7%",
           icon: "fas fa-sad-tear",
         },
-      ],
-    };
+      ];
+      this.portfolioSeries = [
+        {
+          name: "Portfolio Value",
+          data: [23000, 23500, 22800, 24200, 24540, 24300, 24800],
+        },
+      ];
+    }, 100);
   },
 };
 </script>
@@ -84,6 +142,6 @@ export default {
 .chart-row {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 </style>
