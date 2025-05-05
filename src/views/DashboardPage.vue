@@ -292,6 +292,12 @@ export default {
   }
 }
 
+@media (max-width: 1000px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 800px) {
   .kpi-row {
     grid-template-columns: repeat(2, 1fr);
