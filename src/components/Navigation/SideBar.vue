@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       activeItem: "dashboard",
-      collapsed: false,
+      collapsed: true,
       menuItems: [
         {
           name: "dashboard",
@@ -103,7 +103,7 @@ export default {
   overflow-y: scroll;
   scrollbar-width: none;
   flex-shrink: 0;
-  font-family: "Unica One", sans-serif;
+  font-family: "Rajdhani", sans-serif;
   border-right: 1px solid rgba(193, 191, 214, 0.5);
 }
 
