@@ -1,6 +1,8 @@
 <template>
   <div class="recent-activity">
-    <h3 class="activity-title">Recent Activity</h3>
+    <h3 class="activity-title">
+      <i class="header-icon fas fa-exchange-alt"></i> Recent Activity
+    </h3>
     <div class="activity-list">
       <div
         v-for="(activity, index) in activities"
@@ -19,23 +21,23 @@
 export default {
   name: "RecentActivity",
   props: {
-    activities: Array, // Receiving activities as prop from DashboardPage
+    activities: Array,
   },
   methods: {
     getIconClass(type) {
       switch (type) {
         case "purchase":
-          return "fas fa-shopping-cart"; // Shopping cart for purchase
+          return "fas fa-shopping-cart";
         case "sell":
-          return "fas fa-wallet"; // Wallet icon for sale
+          return "fas fa-wallet";
         case "alert":
-          return "fas fa-bell"; // Bell icon for alerts
+          return "fas fa-bell";
         case "deposit":
-          return "fas fa-plus-circle"; // Plus circle for deposits
+          return "fas fa-plus-circle";
         case "rebalance":
-          return "fas fa-sync-alt"; // Sync for portfolio rebalance
+          return "fas fa-sync-alt";
         default:
-          return "fas fa-question"; // Default fallback
+          return "fas fa-question";
       }
     },
   },
@@ -59,6 +61,12 @@ export default {
   color: white;
 }
 
+.header-icon {
+  color: orange;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
 .activity-item {
   display: flex;
   align-items: center;
@@ -73,8 +81,8 @@ export default {
 }
 
 .activity-icon {
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.7rem;
   color: orange;
 }
 
