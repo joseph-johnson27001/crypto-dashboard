@@ -70,6 +70,10 @@ export default {
   border: 1px solid rgba(193, 191, 214, 0.2);
   color: #c1bfd6;
   font-family: "Rajdhani", sans-serif;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #c1bfd6 transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .table-title {
