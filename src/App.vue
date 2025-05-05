@@ -29,7 +29,7 @@ export default {
     isSidebarCollapsed() {
       setTimeout(() => {
         this.triggerResize();
-      }, 100);
+      }, 0);
     },
   },
   methods: {

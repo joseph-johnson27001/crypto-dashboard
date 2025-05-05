@@ -13,6 +13,7 @@
       </select>
     </div>
     <apexchart
+      ref="portfolioChart"
       type="area"
       height="300"
       :options="chartOptions"
@@ -98,6 +99,7 @@ export default {
   padding: 1rem;
   color: white;
   font-family: "Rajdhani", sans-serif;
+  overflow: hidden;
 }
 
 .header-area {
