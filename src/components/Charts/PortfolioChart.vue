@@ -9,6 +9,7 @@
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
         <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
       </select>
     </div>
     <apexchart
@@ -83,7 +84,7 @@ export default {
   },
   methods: {
     handleTimeframeChange() {
-      this.$emit("update-chart", this.selectedTimeframe); // Emit the selected timeframe to parent
+      this.$emit("update-chart", this.selectedTimeframe);
     },
   },
 };

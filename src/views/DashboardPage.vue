@@ -133,6 +133,15 @@ export default {
             "Dec",
           ],
         },
+        yearly: {
+          series: [
+            {
+              name: "Portfolio Value",
+              data: [12000, 20000, 21000, 24000, 36000],
+            },
+          ],
+          categories: ["2020", "2021", "2022", "2023", "2024"],
+        },
       },
       selectedTimeframe: "daily",
     };
