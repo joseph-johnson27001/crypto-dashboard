@@ -40,5 +40,6 @@ body {
 .content {
   padding: 2rem;
   width: 100%;
+  overflow-y: scroll;
 }
 </style>

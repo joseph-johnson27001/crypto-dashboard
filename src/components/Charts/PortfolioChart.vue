@@ -107,13 +107,11 @@ export default {
 }
 
 .chart-title {
-  font-size: 1.05rem;
-  font-weight: 400;
   margin-top: 5px;
   margin-bottom: 0px;
-  color: #c1bfd6;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: white;
 }
 
 .header-icon {
