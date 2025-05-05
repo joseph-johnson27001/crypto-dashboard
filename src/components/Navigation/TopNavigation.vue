@@ -84,7 +84,7 @@ export default {
 .brand {
   font-size: 1.25rem;
   color: orange;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .right-section i {
