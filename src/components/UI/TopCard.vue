@@ -58,7 +58,7 @@ export default {
 }
 
 .search-area i {
-  color: orange;
+  color: white;
   font-size: 18px;
 }
 
