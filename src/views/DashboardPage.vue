@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard">
+    <!-- KPI Cards -->
     <div class="kpi-row">
       <StatCard
         v-for="(card, index) in statCards"
@@ -10,16 +11,23 @@
         :icon="card.icon"
       />
     </div>
+
+    <!-- Portfolio Chart -->
+    <div class="chart-row">
+      <PortfolioChart />
+    </div>
   </div>
 </template>
 
 <script>
 import StatCard from "@/components/UI/StatCard.vue";
+import PortfolioChart from "@/components/Charts/PortfolioChart.vue";
 
 export default {
   name: "DashboardPage",
   components: {
     StatCard,
+    PortfolioChart,
   },
   data() {
     return {
@@ -37,18 +45,6 @@ export default {
           icon: "fas fa-arrow-trend-up",
         },
         {
-          label: "Total Assets",
-          value: "$48,900",
-          change: "+1.9%",
-          icon: "fas fa-coins",
-        },
-        {
-          label: "Top Gainer",
-          value: "SOL +8.4%",
-          change: "+8.4%",
-          icon: "fas fa-arrow-up",
-        },
-        {
           label: "BTC Price",
           value: "$64,200",
           change: "-0.8%",
@@ -59,6 +55,18 @@ export default {
           value: "$3,120",
           change: "+1.3%",
           icon: "fab fa-ethereum",
+        },
+        {
+          label: "Top Gainer",
+          value: "SOL +8.2%",
+          change: "+8.2%",
+          icon: "fas fa-fire",
+        },
+        {
+          label: "Top Loser",
+          value: "DOGE -3.7%",
+          change: "-3.7%",
+          icon: "fas fa-sad-tear",
         },
       ],
     };
@@ -71,5 +79,11 @@ export default {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 20px;
 }
 </style>

@@ -36,7 +36,7 @@ export default {
 <style scoped>
 .stat-card {
   background: #2e3348;
-  border: 2px solid rgba(193, 191, 214, 0.2);
+  border: 1px solid rgba(193, 191, 214, 0.2);
   border-radius: 8px;
   padding: 1.2rem;
   min-width: 180px;
