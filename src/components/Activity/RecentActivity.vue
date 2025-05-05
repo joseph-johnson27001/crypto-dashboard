@@ -95,4 +95,27 @@ export default {
   font-size: 0.85rem;
   color: #a9a6c1;
 }
+
+@media (max-width: 350px) {
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-text,
+  .activity-time {
+    flex: 1 1 100%;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .activity-time {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  .activity-icon {
+    margin-bottom: 4px;
+  }
+}
 </style>
