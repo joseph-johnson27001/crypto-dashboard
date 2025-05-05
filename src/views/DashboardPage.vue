@@ -28,6 +28,12 @@
 
       <!-- Coin Table -->
       <CoinTable :coins="coinTableData" />
+
+      <!-- Portfolio Allocation Chart -->
+      <PortfolioAllocationChart
+        title="Portfolio Allocation"
+        :coins="coinAllocationData"
+      />
     </div>
   </div>
 </template>
@@ -37,6 +43,7 @@ import StatCard from "@/components/UI/StatCard.vue";
 import PortfolioChart from "@/components/Charts/PortfolioChart.vue";
 import CoinTable from "@/components/Tables/CoinTable.vue";
 import RecentActivity from "@/components/Activity/RecentActivity.vue";
+import PortfolioAllocationChart from "@/components/Charts/PortfolioAllocationChart.vue";
 
 export default {
   name: "DashboardPage",
@@ -45,6 +52,7 @@ export default {
     PortfolioChart,
     CoinTable,
     RecentActivity,
+    PortfolioAllocationChart,
   },
   data() {
     return {
@@ -85,6 +93,12 @@ export default {
           change: "-3.7%",
           icon: "fas fa-sad-tear",
         },
+      ],
+      coinAllocationData: [
+        { name: "Bitcoin", percentage: 60 },
+        { name: "Ethereum", percentage: 25 },
+        { name: "Solana", percentage: 10 },
+        { name: "Cardano", percentage: 5 },
       ],
       recentActivities: [
         {
