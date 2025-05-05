@@ -38,8 +38,9 @@ body {
 }
 
 .content {
-  padding: 2rem;
+  padding: 1.5rem;
   width: 100%;
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 </style>
