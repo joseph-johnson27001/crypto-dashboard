@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     toggleCollapse() {
-      this.$emit("update:collapsed", !this.collapsed); // ✅ emit instead of mutate
+      this.$emit("update:collapsed", !this.collapsed);
     },
     setActiveItem(name) {
       this.activeItem = name;
