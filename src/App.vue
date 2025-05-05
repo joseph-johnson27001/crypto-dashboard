@@ -3,6 +3,7 @@
     <SideBar v-model:collapsed="isSidebarCollapsed" />
     <div class="content">
       <TopNavigation />
+      <TopCard />
       <DashboardPage />
     </div>
   </div>
@@ -12,6 +13,7 @@
 import SideBar from "./components/Navigation/SideBar.vue";
 import DashboardPage from "./views/DashboardPage.vue";
 import TopNavigation from "./components/Navigation/TopNavigation.vue";
+import TopCard from "./components/UI/TopCard.vue";
 
 export default {
   name: "App",
@@ -19,6 +21,7 @@ export default {
     SideBar,
     DashboardPage,
     TopNavigation,
+    TopCard,
   },
   data() {
     return {
