@@ -302,11 +302,21 @@ export default {
   .kpi-row {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .chart-row {
+    display: flex; /* Switch to flexbox */
+    flex-direction: column; /* Stack items vertically */
+  }
 }
 
 @media (max-width: 500px) {
   .kpi-row {
     grid-template-columns: 1fr;
+  }
+
+  .chart-row {
+    display: flex; /* Switch to flexbox */
+    flex-direction: column; /* Stack items vertically */
   }
 }
 </style>
