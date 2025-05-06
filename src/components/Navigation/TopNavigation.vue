@@ -91,6 +91,7 @@ export default {
   font-size: 20px;
   cursor: pointer;
   padding-right: 20px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 699px) {
