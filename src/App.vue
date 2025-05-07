@@ -6,6 +6,7 @@
       <TopCard />
       <DashboardPage />
     </div>
+    <DashboardButton />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import SideBar from "./components/Navigation/SideBar.vue";
 import DashboardPage from "./views/DashboardPage.vue";
 import TopNavigation from "./components/Navigation/TopNavigation.vue";
 import TopCard from "./components/UI/TopCard.vue";
+import DashboardButton from "./components/UI/DashboardButton.vue";
 
 export default {
   name: "App",
@@ -22,6 +24,7 @@ export default {
     DashboardPage,
     TopNavigation,
     TopCard,
+    DashboardButton,
   },
   data() {
     return {
